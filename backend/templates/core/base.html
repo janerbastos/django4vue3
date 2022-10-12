@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'imgs/favicon-32x32.png' %}" sizes="32x32" type="image/png">
+    <title>Django VueJS {% if debug %} [Modo debug] {% endif %}</title>
+    {% if debug %}
+    <!-- modo de debug ativo. -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <script type="module" src="http://127.0.0.1:3000/@vite/client"></script>
+    <!-- end debug -->
+    {% endif %}
+</head>
+
+<body>
+    <div id="app"></div>
+    {% if debug %}
+    <!-- modo de debug ativo. -->
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <script type="module" src="http://127.0.0.1:3000/src/main.js"></script>
+    <!-- end debug -->
+    {% endif %}
+</body>
+
+</html>
