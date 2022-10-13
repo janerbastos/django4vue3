@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-family: 'Roboto';
+    font-weight: 400;
+    height: 100vh;
+    background-color: #ddd;
+}
+
+.title-h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.box-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.logo img {
+    width: 4rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: #cab4b4;
+    padding: 0 2.5rem;
+    width: 400px;
+    border-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.label {
+    display: block;
+    margin-bottom: .2rem;
+}
+.field {
+    margin-bottom: 1rem;
+}
+
+.field input[type=text], .field input[type=password], .field input[type=email]{
+    font-size: 1.1rem;
+    padding: .5rem;
+    border: none;
+    border-bottom: 1px solid #4d4141;
+    width: 100%;
+    height: 2.5rem;
+    font-weight: 100 !important;
+}
+
+.field input[type=text]:focus, .field input[type=password]:focus, .field input[type=email]:focus {
+    outline: none;
+    background-color: #f0e2e2;
+}
+
+input[type=submit] {
+    font-size: 1.0rem;
+    padding: .5rem;
+    height: 2.5rem;
+    background-color: #7c7575;
+    color: white;
+    border: none;
+    margin-bottom: 1rem;
+    font-weight: 300 !important;
+    cursor: pointer;
+}
+
+.error ul {
+    list-style-type: none;
+    font-size: 0.9rem;
+    color: #c23131;
+}
+
+.footer{
+    margin-bottom: 1.3rem;
+}
+.footer a {
+    text-decoration: none;
+    color: rgb(82, 56, 56);
+    margin-bottom: .3rem;
+}
+
+.footer a:hover {
+    text-decoration: none;
+    color: rgb(150, 135, 135);
+}
+
+.messages {
+    background-color: #e4d9d9;
+    padding: .2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #c23131;
+    list-style-type: none;
+}
+
+.messages .warning {
+    border-color: #ffe08a;
+    color: #946c00;
+    padding: 1rem;
+}
+
+.messages .success {
+    border-color: #48c78e;
+    color: #257953;
+    padding: 1rem;
+}
