@@ -18,7 +18,7 @@ from .forms import (
 # Create your views here.
 
 def login (request):
-    forn = None
+    form = None
     next = request.GET.get('next', '/admin')
     template = 'usuarios/form-login.html'
     if request.method == 'POST':
@@ -82,7 +82,7 @@ def register (request):
                 'last_name': form.cleaned_data['last_name'],
                 'phone_number': form.cleaned_data['phone_number'],
                 'email': form.cleaned_data['email'],
-                'username': form.cleaned_data['username'],
+                'username': form.cleaned_data['email'],
             }
             user = User.objects.create(**data)
             user.set_password(form.cleaned_data['password'])

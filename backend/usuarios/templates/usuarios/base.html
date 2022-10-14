@@ -8,6 +8,7 @@
 <body class="hold-transition login-page">
   <div class="login-box">
     <!-- /.login-logo -->
+    {% include 'usuarios/partial/message.html' %}
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
         <a href="{% url 'index' %}" class="h1"><b>Evento</b>WEB</a>
@@ -24,6 +25,13 @@
   <script src="{% static 'adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <!-- AdminLTE App -->
   <script src="{% static 'adminlte/assets/js/adminlte.min.js' %}"></script>
+
+  <script src="{% static 'adminlte/plugins/jquery-validation/jquery.validate.min.js' %}"></script>
+  <script src="{% static 'adminlte/plugins/jquery-validation/additional-methods.min.js' %}"></script>
+
+  {% block footer %}
+
+  {% endblock %}
 </body>
 
 {% endblock %}

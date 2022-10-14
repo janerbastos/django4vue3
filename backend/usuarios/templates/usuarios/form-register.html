@@ -4,8 +4,8 @@
 
 <div class="card-body">
   <p class="login-box-msg">Registar um novo membro</p>
-
-  <form method="post"> {% csrf_token %}
+  {{ form.errors }}
+  <form method="post" id="form-register"> {% csrf_token %}
     <div class="input-group mb-3">
       {{ form.first_name }}
       <div class="input-group-append">
@@ -22,6 +22,11 @@
         </div>
       </div>
     </div>
+    {% if form.email.errors %}
+    <div class="text-danger">
+      {{ form.email.errors }}
+    </div>
+    {% endif %}
     <div class="input-group mb-3">
       {{ form.email }}
       <div class="input-group-append">
@@ -30,6 +35,7 @@
         </div>
       </div>
     </div>
+
 
     <div class="input-group mb-3">
       {{ form.phone_number }}
@@ -76,5 +82,69 @@
   <a href="{% url 'login' %}" class="text-center">Eu já tenho um registro</a>
 </div>
 <!-- /.form-box -->
+
+{% endblock %}
+
+{% block footer %}
+
+<script>
+  $(function () {
+    $('#form-register').validate({
+      rules: {
+        first_name: {
+          rangelength: [3, 50]
+        },
+        last_name: {
+          rangelength: [3, 50]
+        },
+        email: {
+          required: true,
+          email: true,
+        },
+        password: {
+          required: true,
+          minlength: 5
+        },
+        repeat_password: {
+          required: false,
+          equalTo: "#id_password"
+        },
+
+      },
+      messages: {
+        first_name: {
+          required: "Por favor informe seu primeiro nome",
+          rangelength: "Seu nome deve ter no minimo 3 e maxímo 50 caracters"
+        },
+        last_name: {
+          required: "Por favor informe seu ultimo nome",
+          rangelength: "Seu último nome deve ter no minimo 3 e maxímo 50 caracters"
+        },
+        email: {
+          required: "Por favor informe um endereço de email",
+          email: "Please enter a valid email address"
+        },
+        password: {
+          required: "Por favor forneça uma senha",
+          minlength: "Sua senha deve ter pelo menos 5 caracters"
+        },
+        repeat_password: {
+          equalTo: "Senha não confirma, corrija e tente novamente."
+        }
+      },
+      errorElement: 'span',
+      errorPlacement: function (error, element) {
+        error.addClass('invalid-feedback');
+        element.closest('.input-group').append(error);
+      },
+      highlight: function (element, errorClass, validClass) {
+        $(element).addClass('is-invalid');
+      },
+      unhighlight: function (element, errorClass, validClass) {
+        $(element).removeClass('is-invalid');
+      }
+    });
+  });
+</script>
 
 {% endblock %}

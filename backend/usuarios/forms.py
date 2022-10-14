@@ -63,12 +63,12 @@ class RegisterForm(forms.Form):
         max_length=15,
         label='Telefone',
         required=False,
-        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder':'Telefone'})
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Telefone'})
     )
     username = forms.CharField(
         max_length=50,
         label='Nome de usuário',
-        required=True,
+        required=False,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Nome de usuário'}))
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder':'Senha'}),
