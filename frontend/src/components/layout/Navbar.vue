@@ -1,5 +1,14 @@
 <script setup>
 import { HOST_IMG } from "../../constantes";
+import { useConfigStore } from "../../stores/config";
+
+const config = useConfigStore();
+
+const showActionBar = () => {
+  const status = config.isActionBar;
+  console.log(status);
+  config.setActionBar(!status);
+};
 </script>
 
 <template>
@@ -7,7 +16,12 @@ import { HOST_IMG } from "../../constantes";
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"
+        <a
+          class="nav-link"
+          data-widget="pushmenu"
+          href="#"
+          role="button"
+          @click="showActionBar"
           ><i class="fas fa-bars"></i
         ></a>
       </li>
