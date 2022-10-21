@@ -1,5 +1,4 @@
-from unicodedata import name
-from django.urls import path
+from django.urls import path, include
 
 from . import views
 
@@ -10,5 +9,6 @@ urlpatterns = [
     path('recover-password', views.recover_password, name="recover-password"),
     path('changer-password', views.changer_password, name="changer-password"),
     path('logout', views.logout, name='logout'),
-    path('profile', views.profile, name='profile')
+    path('profile', views.profile, name='profile'),
+    path('apis/v1/', include('usuarios.apis.urls'))
 ]
