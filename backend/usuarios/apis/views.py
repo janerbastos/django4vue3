@@ -6,6 +6,7 @@ from usuarios.apis.serializers import UserSerializer
 
 class UsuarioListCreate(
     mixins.ListModelMixin,
+    mixins.UpdateModelMixin,
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet):
     

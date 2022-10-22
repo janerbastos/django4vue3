@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import { useSecurityStore } from "../stores/security";
-import Users from "../components/pages/Users.vue";
+import Users from "../components/pages/users/Users.vue";
+import EditUser from "../components/pages/users/EditUser.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,6 +11,11 @@ const router = createRouter({
       path: "/",
       name: "Users",
       component: Users,
+    },
+    {
+      path: "/user/:id",
+      name: "EditUser",
+      component: EditUser,
     },
     {
       path: "/users",

@@ -4,6 +4,8 @@ import Sidebar from "./components/layout/Sidebar.vue";
 import ContentHeader from "./components/layout/Content.vue";
 import ControlSidebar from "./components/layout/ControlSidebar.vue";
 import Footer from "./components/layout/Footer.vue";
+import Toast from "./components/Toast.vue";
+
 import { useConfigStore } from "./stores/config";
 
 const config = useConfigStore();
@@ -16,6 +18,7 @@ const config = useConfigStore();
     <content-header />
     <control-sidebar />
     <Footer />
+    <toast v-if="config.getToast.active" />
   </div>
 </template>
 
