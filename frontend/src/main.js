@@ -1,7 +1,8 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 
-import "./style.css";
+import "admin-lte/dist/css/adminlte.css";
+import "./assets/style.css";
 import App from "./App.vue";
 import router from "./router";
 import { axios } from "./axios/interceptors";

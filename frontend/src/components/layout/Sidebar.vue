@@ -1,5 +1,8 @@
 <script setup>
 import { HOST_IMG } from "../../constantes";
+import Nav from "../menu/Nav.vue";
+import NavItem from "../menu/NavItem.vue";
+import NavTreeview from "../menu/NavTreeview.vue";
 </script>
 <template>
   <!-- Main Sidebar Container -->
@@ -49,69 +52,41 @@ import { HOST_IMG } from "../../constantes";
       </div>
 
       <!-- Sidebar Menu -->
-      <nav class="mt-2">
+      <Nav>
+        <NavItem
+          titulo="Configure"
+          :active="false"
+          :open="true"
+          icon="fa-tasks"
+        >
+          <nav-treeview>
+            <li class="nav-item">
+              <router-link to="/users" class="nav-link">
+                <i class="fas fa-users nav-icon"></i>
+                <p>Usuários</p>
+              </router-link>
+            </li>
+          </nav-treeview>
+        </NavItem>
+      </Nav>
+      <!--<nav class="mt-2">
         <ul
           class="nav nav-pills nav-sidebar flex-column"
           data-widget="treeview"
           role="menu"
           data-accordion="false"
         >
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-users"></i>
-              <p>Usuários <i class="right fas fa-angle-left"></i></p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-beer nav-icon"></i>
-                  <p>Listar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
-                </a>
-              </li>
-            </ul>
-          </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <router-link to="/users" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
               <p>
                 Usuarios
                 <span class="right badge badge-danger">New</span>
               </p>
-            </a>
+            </router-link>
           </li>
         </ul>
-      </nav>
+      </nav> -->
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
